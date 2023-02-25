@@ -30,11 +30,11 @@ output * bg /home/eleanor/Pictures/matrix_trans.jpg fill
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output eDP-1 scale 1
+output eDP-1 scale 1.175
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Noto Sans Mono 14
+font pango:Noto Sans Mono 12
 
 ### Idle configuration
 #
@@ -217,8 +217,15 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 exec gammastep
 
+# Colors
+
+# Focused
+set $line_f #830083
+set $fill_f #510051
+set $text_f #ffffff
+
 # class                 border  bground text    indicator child_border
-client.focused          #830083 #510051 #FFFFFF #830083   #510051
+client.focused          $line_f $fill_f $text_f #ff00ff   #510051
 client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
 client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
 client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
@@ -240,9 +247,9 @@ bar {
     status_command i3status
 
     colors {
-        statusline #ff00ff
-        background #320032
-        focused_workspace  #ff00ff #bb00bb #000000
+        statusline $text_f
+        background $fill_f
+        focused_workspace  $line_f $fill_f $text_f
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
