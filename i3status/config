@@ -22,8 +22,8 @@ order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "🛜: (%quality at %essid) %ip"
-        format_down = "🛜: down"
+        format_up = "🛜 (%quality at %essid) %ip"
+        format_down = "🛜 down"
 }
 
 ethernet _first_ {
@@ -54,8 +54,8 @@ tztime local {
 }
 
 volume master {
-  format = "🔊: %volume"
-  format_muted = "🔇: %volume"
+  format = "🔊 %volume"
+  format_muted = "🔇 %volume"
   device = "pulse"
   mixer = "Master"
   mixer_idx = 0
