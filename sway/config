@@ -34,7 +34,7 @@ output eDP-1 scale 1.175
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Noto Sans 12
+font pango:Terminus Bold 12
 
 ### Idle configuration
 #
@@ -218,20 +218,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 && $refresh_i3stat
 exec gammastep
 
 # Colors
-
-# Focused
-set $line_f #830083
-set $fill_f #510051
-set $text_f #ffffff
-
-# class                 border  bground text    indicator child_border
-client.focused          $line_f $fill_f $text_f #ff00ff   #510051
-client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
-client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
-client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
-
-client.background       #FFFFFF
+include purple.config
 
 # default_border pixel
 
@@ -247,14 +234,15 @@ bar {
     status_command ~/.local/bin/statuscmd
 
     colors {
-        statusline $text_f
+        statusline #00ff00
         background #310031
-        focused_workspace  $line_f $fill_f $text_f
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        focused_workspace  #ff00ff #830083 #ffffff
+        inactive_workspace #323232 #323232 #5c5c5c
     }
 }
 
-for_window [app_id="google-chrome"] inhibit_idle fullscreen
 for_window [app_id="firefox"] inhibit_idle fullscreen
+
+for_window [class="Google-chrome"] inhibit_idle fullscreen
 
 include /etc/sway/config.d/*
