@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:inconsolata bold 14
+font pango:Terminus Bold 14
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -49,8 +49,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use light to adjust brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 && $refresh_i3status
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -194,7 +194,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  bground text    indicator child_border
-client.focused          #830083 #510051 #FFFFFF #830083   #510051
+client.focused          #830083 #510051 #00FF00 #ff00ff   #510051
 client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
 client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
 client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
@@ -207,16 +207,17 @@ client.background       #FFFFFF
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+  position bottom
   colors {
-    background #330033
-    statusline #FFFFFF
+    background #510051
+    statusline #00FF00
     separator  #666666
 
-    focused_workspace  #8300FA #5100DA #FFFFFF
+    focused_workspace  #8300FA #5100DA #00ff00
     active_workspace   #3C6EB4 #294172 #FFFFFF
     inactive_workspace #8C8C8C #4C4C4C #888888
     urgent_workspace   #EC69A0 #DB3279 #FFFFFF
     binding_mode       #b691d3 #A07CBC #FFFFFF
   }
-  status_command i3status
+  status_command ~/.local/bin/statuscmd
 }
