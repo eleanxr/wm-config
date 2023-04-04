@@ -7,7 +7,7 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-        colors = true
+        colors = false
         interval = 5
 }
 
@@ -16,14 +16,14 @@ order += "wireless _first_"
 # order += "ethernet _first_"
 order += "battery all"
 order += "disk /"
-order += "load"
+# order += "load"
 order += "memory"
 order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "%essid:  %quality"
-        format_down = "wifi down"
+        format_up = "📶 %essid:  %quality"
+        format_down = "📶 down"
 }
 
 ethernet _first_ {
@@ -32,11 +32,11 @@ ethernet _first_ {
 }
 
 battery all {
-        format = "⚡%status %percentage"
+        format = "⚡ %status %percentage"
 }
 
 disk "/" {
-        format = "%avail"
+        format = "🖴  %avail"
 }
 
 load {
