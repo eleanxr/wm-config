@@ -21,6 +21,8 @@ font pango:Terminus Bold 14
 
 exec --no-startup-id feh --bg-fill /home/eleanor/Pictures/matrix_trans.jpg
 
+exec --no-startup-id picom
+
 # Currently disabled because it appears to cause X artifacts and freezing.
 # exec --no-startup-id redshift
 
@@ -204,16 +206,16 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 
 # gaps inner 10
-default_border pixel
+# default_border pixel
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  position top
+  position bottom
   colors {
-    background #510051
+    background #230023
     statusline #00FF00
-    separator  #666666
+    separator  #00ff00
 
     focused_workspace  #8300FA #5100DA #00ff00
     active_workspace   #3C6EB4 #294172 #FFFFFF
