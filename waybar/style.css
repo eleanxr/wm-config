@@ -1,13 +1,13 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Terminus, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14pt;
     font-weight: bold;
+    font-size: 12pt;
 }
 
 window#waybar {
     background-color: rgb(51, 00, 51);
-    /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #00ff00;
     transition-property: background-color;
     transition-duration: .5s;
@@ -90,7 +90,8 @@ button:hover {
 #scratchpad,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
+    color: #00ff00;
+    background-color: #990099;
 }
 
 #window,
@@ -109,17 +110,11 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: #330033;
+    color: #00ff00;
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
 }
 
 @keyframes blink {
@@ -140,28 +135,21 @@ button:hover {
 }
 
 label:focus {
-    background-color: #000000;
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
 }
 
 #memory {
-    background-color: #9b59b6;
 }
 
 #disk {
-    background-color: #964B00;
 }
 
 #backlight {
-    background-color: #90b1b1;
 }
 
 #network {
-    background-color: #2980b9;
 }
 
 #network.disconnected {
@@ -169,13 +157,9 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
 }
 
 #wireplumber {
@@ -202,7 +186,6 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
 }
 
 #temperature.critical {
@@ -223,12 +206,10 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    background-color: #ff00ff;
 }
 
 #mpd {
