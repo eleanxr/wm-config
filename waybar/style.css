@@ -1,14 +1,13 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Terminus, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-weight: bold;
+    font-family: Noto Sans Mono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 12pt;
 }
 
 window#waybar {
-    background-color: rgb(51, 00, 51);
+    background-color: #1a1b26;
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #00ff00;
+    color: #ff00ff;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -49,19 +48,23 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#workspaces button {
+#workspaces button, #tags button {
+    min-width: 50px;
     padding: 0 5px;
     background-color: transparent;
-    color: #00ff00;
+    color: #008888;
+    border: 1px solid #008888;
 }
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
 }
 
-#workspaces button.focused {
-    background-color: #aa00aa;
-    box-shadow: inset 0 -3px #00ff00;
+#workspaces button.focused, #tags button.focused {
+    color: #ff00ff;
+    background-color: #220022;
+    box-shadow: inset 0 -3px #ff00ff;
+    border: 1px solid #ff00ff;
 }
 
 #workspaces button.urgent {
@@ -90,8 +93,9 @@ button:hover {
 #scratchpad,
 #mpd {
     padding: 0 10px;
-    color: #00ff00;
-    background-color: #990099;
+    color: #ff00ff;
+    background-color: #220022;
+    border: 1px solid #aa00aa;
 }
 
 #window,
@@ -110,8 +114,7 @@ button:hover {
 }
 
 #clock {
-    background-color: #330033;
-    color: #00ff00;
+    color: #ff00ff;
 }
 
 #battery {
@@ -126,7 +129,7 @@ button:hover {
 
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: #ffffff;
+    color: #000000;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -190,6 +193,7 @@ label:focus {
 
 #temperature.critical {
     background-color: #eb4d4b;
+    color: #000000;
 }
 
 #tray {
@@ -210,6 +214,7 @@ label:focus {
 
 #idle_inhibitor.activated {
     background-color: #ff00ff;
+    color: #000b1e
 }
 
 #mpd {
